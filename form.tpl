@@ -1,6 +1,5 @@
 % rebase('osnova.tpl')
 <form action="/razpredelnica" method="post">
-    <!-- fix unicode za stresice -->
     Igralec1: <input name="igralec1" type="text" />
     Igralec2: <input name="igralec2" type="text" />
     Igralec3: <input name="igralec3" type="text" />

@@ -4,18 +4,14 @@ from Model_Igralec import Igralec
 
 partija = None
 
-####FIX Č Ž Š !!!!!!!!!!! SERVER CRASHA
 
 @route('/')
 def vnos_igralcev():
     #later partija = None
     return template('form.tpl')
 
-@post('/razpredelnica') # or @route('/login', method='POST')
-##js mislim da ta funkcija lahko pohendla dva casa, ki sta / -> /razpredelnica in pa /razpredelnica -> /razpredelnica oziroma "submit"
+@post('/razpredelnica')
 def seznam_igralcev():
-    ##to naredi z nule nove igralce in jih da v partijo... ampak mi bi rabili nacin da samo dodamo podatke v obstojeco partijo in gremo na new page
-    
     global partija
     if partija == None:
         ##partije ni, naredimo novo

@@ -9,7 +9,6 @@
   <div>
     <p>{{igralec.ime}}</p>
     <hr>
-    <!--  Radi bi vodoravno crto cez celo, morda tezave s tem kako container svoje childe razširi oz. ne razširi (flexbox?)   -->
     <p>
     {{" O" * igralec.radelci}}
     </p>
@@ -29,7 +28,6 @@
     </table>
     <div class="gumbi">
         <form action="/razpredelnica" method="post">
-            <!-- PLACEHOLDER FORM ACTION SE ZA POGRUNTAT -->
             <input type="hidden" name="igralec" value={{igralec.ime}} />
             <label for="igre">Izberi igro: </label>
             <select name="igre" id="igre">
@@ -56,9 +54,6 @@
             <label for="soigralec">Soigralec: </label>
             <select name="soigralec" id="soigralec">
                 <option value="sam">Nihče</option>
-                <!-- Mogoče ti bolj prav pride, da je ta value namesto "sam" pač ime igralca samega, npr
-                    Matevž izbere opcijo "Nihče," value optiona pa je "Matevž", isto kot pri drugih pride od SOIGRALEC.IME
-                    To bi bilo potrebno potem v Testiranje.py ustrezno hendlat, npr for player if value==player.name, je sam -->
                 % for soigralec in partija.seznam_igralcev:
                 % if soigralec != igralec:
                 <option value={{soigralec.ime}}>{{soigralec.ime}}</option>

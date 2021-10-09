@@ -30,19 +30,6 @@ class Partija(Partija):
                 return igralec
             ##dejmo rect da imajo igralci po logiki razlicna imena/vzdevke
 
-    ##def funkcijo dodaj_igralce ki dobi igralca/e in ga/jih doda v partijo
-
-    def razvrstitev(self):
-        self.seznam_igralcev.sort(key = lambda x: x[1][-1])
-        return seznam_imen(self.seznam_igralcev)
-
-
-    def seznam_imen(seznam):
-        imena = []
-        for ime in seznam:
-            imena.append(ime[0])
-        return imena
-
     def klop(self):
         for igralec in self.seznam_igralcev:
             igralec.dodaj_radelc()
@@ -88,13 +75,3 @@ class Partija(Partija):
 
 
     
-
-partija = Partija([Igralec(("Matevž",[0, 10, 90, 140],1)), Igralec(("Črt", [0, 20, 50, -30], 1)), Igralec(("Mama", [0, 10, 100], 2)), Igralec(("Ati", [0, 40, 60], 0))])
-
-
-matevz = Igralec(("Matevž",[0, 10, 90, 140],1))
-crt = Igralec(("Črt", [0, 20, 50, -30], 1))
-mama = Igralec(("Mama", [0, 10, 100], 2))
-ata = Igralec(("Ati", [0, 40, 60], 0))
-
-partija1 = Partija([matevz, crt, mama, ata])
